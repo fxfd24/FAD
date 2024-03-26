@@ -161,10 +161,12 @@ class FirstHelpApp(MDApp):
 
             # Устанавливаем вертикальную прокрутку в ноль
             user_messages_container.scroll_y = 0
-
-        sound = SoundLoader.load('music/send_audio.mp3')
-        if sound:
-            sound.play()
+        try:
+            sound = SoundLoader.load('music/send_audio.mp3')
+            if sound:
+                sound.play()
+        except:
+            pass
 
     # логика записи гс
     def send_text_from_audio(self, text):
